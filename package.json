@@ -1,0 +1,19 @@
+{
+  "name": "star-book-2.0",
+  "version": "1.0.0",
+  "description": "star-book express version",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galvazudys/star-book-2.0.git"
+  },
+  "author": "galvazudis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/galvazudys/star-book-2.0/issues"
+  },
+  "homepage": "https://github.com/galvazudys/star-book-2.0#readme"
+}
