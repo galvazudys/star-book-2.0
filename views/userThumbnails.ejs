@@ -11,8 +11,8 @@
                         <p>
                             <%=item.name%>
                         </p>
-                        <a href='/user/<%=item.profileId %>' class="secondary-content">
-                            <i class="material-icons">grade</i>
+                        <a class="secondary-content" href='/user/<%= item.profileId %>' >
+                            <i class="material-icons">remove_red_eye</i>
                         </a>
                     </li>
 
@@ -22,10 +22,15 @@
         <div class="col s8">
             <% status.forEach(stat =>{%>
                 <div class="card-panel ">
-                    <span class="black-text">
                         <h5 class="title">
                             <%=stat.userName%>
+                        <span>
+                            <a class="secondary-content" href='/user/<%= stat.profileId %>' >
+                                <i class="material-icons">remove_red_eye</i>
+                            </a>
+                        </span>
                         </h5>
+                    <span class="truncate black-text">
                         <br>
                         <hr>
                         <%=stat.message%>

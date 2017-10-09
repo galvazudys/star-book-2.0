@@ -1,10 +1,73 @@
 <%include ./partials/header.ejs %>
     <div class="row">
         <div class='col s8'>
-            <img src=<%= user.image%> >
-            <div><%=user.name %></div>
-            <h1>Fuck it</h1>
+            <img src=<%=user.image%> >
+        </div>
+        <div class='userCard card-panel col s4'>
+            <div>
+                <span>
+                    <strong>Name: </strong>
+                </span>
+                <%=user.name %>
+            </div>
+            <div>
+                <span>
+                    <strong>User Name: </strong>
+                </span>
+                <%=user.userName %>
+            </div>
+            <div>
+                <span>
+                    <strong>Email: </strong>
+                </span>
+                <%=user.email %>
+            </div>
+            <div>
+                <span>
+                    <strong>Age: </strong>
+                </span>
+                <%=user.age %>
+            </div>
+            <div>
+                <span>
+                    <strong>Location: </strong>
+                </span>
+                <%=user.location %>
+            </div>
+            <div>
+                <span>
+                    <strong>Intrest: </strong>
+                </span>
+                <%=user.hobies %>
+            </div>
+            <a href='/' class='btn blue'>Home</a>
+            <a class='dropdown-button btn blue' href='#' data-activates='dropdown1'>User Menu</a>
+
+            <!-- Dropdown Structure -->
+            <ul id='dropdown1' class='dropdown-content'>
+                <li>
+                    <a href="/user/<%=user.id%>/delete">del User</a>
+                </li>
+                <li>
+                    <a href="/thumbnail/<%=user.cardId%>/delete">del Thumbnail</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#!">update User</a>
+                </li>
+                <li>
+                    <a href="/thumbnail/<%=user.cardId%>/update/form">
+                        update Thumbnail
+                        </a>
+                </li>
+            </ul>
         </div>
     </div>
-
-<%include ./partials/footer.ejs %>
+    <div class='row'>
+        <% status.forEach(stat=>{%>
+            <div class='col s8 offset-s2 card-panel '>
+                <%=stat.message %>
+            </div>
+            <%}) %>
+    </div>
+    <%include ./partials/footer.ejs %>

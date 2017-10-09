@@ -87,11 +87,8 @@ module.exports = {
     });
   },
   renderSelectedUser(id) {
-    console.log(id);
     this.model.read(id).then(user => {
-      console.log(user);
       this.statusModel.search(id, (err, status) => {
-        console.log(status);
         if (err) throw err;
         this.view.renderSelectedUser(user, status);
       });
