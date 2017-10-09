@@ -1,9 +1,3 @@
-import user from './models/userModel';
-import controller from './controllers/controller';
-import view from './views/view';
-import thumbnailModel from './models/thumbnailModel';
-import statusModel from './models/statusModel';
-
 window.onload = () => {
   controller.setModel(user);
   controller.setView(view);

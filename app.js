@@ -27,7 +27,6 @@ app.use((req, res, next) => {
   res.locals.controller = controller;
   next();
 });
-console.log(handler);
 app.use(handler);
 
 app.listen(PORT, () => {

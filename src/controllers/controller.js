@@ -87,8 +87,11 @@ module.exports = {
     });
   },
   renderSelectedUser(id) {
+    console.log(id);
     this.model.read(id).then(user => {
+      console.log(user);
       this.statusModel.search(id, (err, status) => {
+        console.log(status);
         if (err) throw err;
         this.view.renderSelectedUser(user, status);
       });
@@ -99,7 +102,8 @@ module.exports = {
       if (error) throw error;
       this.readAllStatus((err, status) => {
         if (err) throw err;
-        this.view.renderUserThumbnails(thumb, status);
+        const revStatus = status.reverse();
+        this.view.renderUserThumbnails(thumb, revStatus);
       });
     });
   },

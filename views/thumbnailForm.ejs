@@ -1,0 +1,27 @@
+<%include ./partials/header.ejs %>
+    <div class="row container">
+        <h1>Add Profile</h1>
+        <form id="thumbnailForm" method="post" action="/thumbnail/create" class="col s6 offset-by-3">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" name="name" id="name" type="text" class="validate">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="userName" id="userName"  type="text" class="validate">
+                    <label for="userName">User Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="image" id="image" type="text" class="validate">
+                    <label for="image">Image-URL</label>
+                </div>
+            </div>
+            <input type="submit" value="submit" class="waves-effect waves-light blue btn">
+            <a href="/"class="waves-effect waves-light btn blue">
+                <i class="material-icons left">home</i>button</a>
+    </div>
+    </form>
+    </div>
+    <%include ./partials/footer.ejs %>

@@ -11,6 +11,7 @@ module.exports = {
     this.res.render('users', { users: users });
   },
   renderSelectedUser(user, status) {
+    console.log(user);
     this.res.render('selectedUser', { user: user, status: status });
   },
   renderUpdateUser(user) {
