@@ -1,0 +1,42 @@
+<%include ./partials/header.ejs %>
+    <div class="row">
+        <div class="col s4">
+            <ul class="collection">
+                <% thumbnails.forEach(item=>{%>
+                    <li class="collection-item avatar">
+                        <img src=<%=item.image%> alt="" class="circle">
+                        <span class="title">
+                            <%= item.userName%>
+                        </span>
+                        <p>
+                            <%=item.name%>
+                        </p>
+                        <a href="#!" class="secondary-content">
+                            <i class="material-icons">grade</i>
+                        </a>
+                    </li>
+
+                    <%})%>
+            </ul>
+        </div>
+        <div class="col s8">
+            <% status.forEach(stat =>{%>
+                <div class="card-panel ">
+                    <span class="black-text">
+                        <h5 class="title">
+                            <%=stat.userName%>
+                        </h5>
+                        <br>
+                        <hr>
+                        <%=stat.message%>
+                    </span>
+                </div>
+                <%})%>
+        </div>
+    </div>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large blue">
+            <i class="large material-icons">add</i>
+        </a>
+    </div>
+    <%include ./partials/footer.ejs %>

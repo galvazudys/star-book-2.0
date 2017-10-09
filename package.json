@@ -4,7 +4,8 @@
   "description": "star-book express version",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/galvazudys/star-book-2.0/issues"
   },
-  "homepage": "https://github.com/galvazudys/star-book-2.0#readme"
+  "homepage": "https://github.com/galvazudys/star-book-2.0#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.1",
+    "faker": "^4.1.0",
+    "morgan": "^1.9.0"
+  }
 }
