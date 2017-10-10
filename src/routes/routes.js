@@ -177,4 +177,21 @@ router.post('/status/:id/create', (req, res) => {
   });
 });
 
+router.get('/status/:userid/:statusid/delete', (req, res) => {
+  const userID = req.params.userid;
+  const statusID = req.params.statusid;
+  res.locals.controller.removeStatus(statusID, (err, data) => {
+    if (err) throw err;
+    res.locals.controller.readUser(userID, (err, user) => {
+      if (err) throw err;
+      const index = user.status.indexOf(statusID);
+      user.status.splice(index, 1);
+      res.locals.controller.updateUser(userID, user, (error, result) => {
+        if (error) throw error;
+        res.locals.controller.renderSelectedUser(userID);
+      });
+    });
+  });
+});
+
 module.exports = router;

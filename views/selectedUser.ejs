@@ -74,6 +74,9 @@
         <% status.forEach(stat=>{%>
             <div class='col s8 offset-s2 card-panel '>
                 <%=stat.message %>
+                <hr>
+                <a href='/status/<%=user.id%>/<%=stat.id%>/delete' class='btn-floating right  waves-effect waves-light red'><i class="material-icons right">delete</i></a>
+                
             </div>
             <%}) %>
     </div>
