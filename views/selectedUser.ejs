@@ -53,16 +53,23 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="/user/<%=user.id%>/update/form">update User</a>
+                    <a href="/user/<%=user.id%>/update">update User</a>
                 </li>
                 <li>
-                    <a href="/thumbnail/<%=user.cardId%>/update/form">
+                    <a href="/thumbnail/<%=user.cardId%>/update">
                         update Thumbnail
-                        </a>
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
+    <form class='row' method='post' action='/status/<%=user.id%>/create'>
+    <div class="input-field col s8 offset-s2">
+        <textarea id="textarea1" name='message' class="materialize-textarea"></textarea>
+        <label for="textarea1">What is on your mind?</label>
+        <input type='submit' value='post' class='btn blue'>
+    </div>
+    </form>
     <div class='row'>
         <% status.forEach(stat=>{%>
             <div class='col s8 offset-s2 card-panel '>

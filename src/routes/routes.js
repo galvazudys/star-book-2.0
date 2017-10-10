@@ -40,7 +40,7 @@ router.post('/thumbnail/create', (req, res) => {
     });
   });
 });
-router.get('/thumbnail/:id/update/form', (req, res) => {
+router.get('/thumbnail/:id/update', (req, res) => {
   res.locals.controller.renderThumbnailUpdate(req.params.id, (err, result) => {
     if (err) throw err;
   });
@@ -97,7 +97,7 @@ router.get('/user/:id', (req, res) => {
     res.locals.controller.renderSelectedUser(id);
   }
 });
-router.get('/user/:id/update/form', (req, res) => {
+router.get('/user/:id/update', (req, res) => {
   const id = req.params.id;
   res.locals.controller.readUser(id, (error, user) => {
     if (error) throw error;
@@ -150,6 +150,29 @@ router.get('/user/:id/delete', (req, res) => {
           });
         });
       }
+    });
+  });
+});
+
+router.post('/status/:id/create', (req, res) => {
+  const id = req.params.id;
+  let msg = req.body.message;
+  res.locals.controller.readUser(id, (err, user) => {
+    if (err) throw err;
+    const status = {
+      profileId: id,
+      message: msg,
+      userName: user.userName
+    };
+    res.locals.controller.addStatus(status, (error, result) => {
+      if (error) throw error;
+
+      user.status.push(result.result.id);
+      res.locals.controller.updateUser(id, user, (er, data) => {
+        if (er) throw er;
+        res.locals.controller.renderSelectedUser(id);
+      });
+      // result.result.id
     });
   });
 });
