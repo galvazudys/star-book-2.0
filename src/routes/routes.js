@@ -97,6 +97,28 @@ router.get('/user/:id', (req, res) => {
     res.locals.controller.renderSelectedUser(id);
   }
 });
+router.get('/user/:id/update/form', (req, res) => {
+  const id = req.params.id;
+  res.locals.controller.readUser(id, (error, user) => {
+    if (error) throw error;
+    res.locals.controller.renderUserUpdateForm(user, () => {});
+  });
+});
+router.post('/user/:id/update', (req, res) => {
+  const id = req.params.id;
+  let user = req.body;
+
+  res.locals.controller.readUser(id, (err, data) => {
+    if (err) throw err;
+    user.cardId = data.cardId;
+    user.status = data.status;
+    user.age = parseInt(user.age);
+    res.locals.controller.updateUser(id, user, (error, newUser) => {
+      if (error) throw error;
+      res.locals.controller.renderSelectedUser(id);
+    });
+  });
+});
 router.get('/user/:id/delete', (req, res) => {
   const id = req.params.id;
   res.locals.controller.readUser(id, (err, user) => {

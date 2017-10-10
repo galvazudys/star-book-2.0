@@ -1,0 +1,47 @@
+<%include ./partials/header.ejs %>
+    <div class="row container">
+        <h1>Update <%=user.name%></h1>
+        <form id="userAction"  method='post'  action='/user/<%=user.id %>/update' class="col s6 offset-by-3">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input placeholder="Placeholder" name='name' value=<%=user.name%> id="name" type="text" class="validate">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="userName" name='userName' value=<%=user.userName%> type="text" class="validate">
+                    <label for="userName">User Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" name='email' value=<%=user.email%> type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="age" name='age' value=<%=user.age%> type="number" class="validate">
+                    <label for="age">Age</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="location" name='location' value=<%=user.location%> type="text" class="validate">
+                    <label for="location">Location</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="hobbies" name='hobies' value=<%=user.hobies%> type="text" class="validate">
+                    <label for="hobbies">Hobbies</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="image" name='image' value=<%=user.image%> type="text" class="validate">
+                    <label for="image">Image-URL</label>
+                </div>
+            </div>
+            <input type="submit" value="submit" class="waves-effect waves-light blue btn">
+            <a href='/' class="waves-effect waves-light btn blue">
+                <i class="material-icons left">home</i>button</a>
+    </div>
+    </form>
+    </div>
+    <%include ./partials/footer.ejs %>
